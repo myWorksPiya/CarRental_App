@@ -30,12 +30,12 @@ namespace CarRentalApp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Return));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,6 +66,8 @@ namespace CarRentalApp
             this.panel2 = new System.Windows.Forms.Panel();
             this.rtnIdDelTxtbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.Label20 = new System.Windows.Forms.Label();
+            this.RentDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RentDataGridView)).BeginInit();
@@ -191,7 +193,7 @@ namespace CarRentalApp
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(245, 652);
+            this.button1.Location = new System.Drawing.Point(245, 713);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 53);
             this.button1.TabIndex = 92;
@@ -204,7 +206,7 @@ namespace CarRentalApp
             this.button3.BackColor = System.Drawing.Color.DodgerBlue;
             this.button3.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(36, 652);
+            this.button3.Location = new System.Drawing.Point(47, 713);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 53);
             this.button3.TabIndex = 91;
@@ -222,7 +224,7 @@ namespace CarRentalApp
             this.ReturnDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ReturnDate.HoverState.Parent = this.ReturnDate;
-            this.ReturnDate.Location = new System.Drawing.Point(245, 430);
+            this.ReturnDate.Location = new System.Drawing.Point(233, 486);
             this.ReturnDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ReturnDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ReturnDate.Name = "ReturnDate";
@@ -230,13 +232,14 @@ namespace CarRentalApp
             this.ReturnDate.Size = new System.Drawing.Size(171, 36);
             this.ReturnDate.TabIndex = 90;
             this.ReturnDate.Value = new System.DateTime(2021, 6, 20, 12, 8, 18, 731);
+            this.ReturnDate.ValueChanged += new System.EventHandler(this.ReturnDate_ValueChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(54, 430);
+            this.label11.Location = new System.Drawing.Point(12, 483);
             this.label11.Name = "label11";
             this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label11.Size = new System.Drawing.Size(177, 39);
@@ -258,7 +261,7 @@ namespace CarRentalApp
             this.DelayTb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DelayTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.DelayTb.HoverState.Parent = this.DelayTb;
-            this.DelayTb.Location = new System.Drawing.Point(196, 505);
+            this.DelayTb.Location = new System.Drawing.Point(196, 550);
             this.DelayTb.Name = "DelayTb";
             this.DelayTb.PasswordChar = '\0';
             this.DelayTb.PlaceholderText = "Fees";
@@ -273,7 +276,7 @@ namespace CarRentalApp
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(36, 505);
+            this.label5.Location = new System.Drawing.Point(30, 550);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(89, 39);
@@ -317,30 +320,30 @@ namespace CarRentalApp
             // 
             // RentDataGridView
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.RentDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.RentDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.RentDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.RentDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.RentDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RentDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.RentDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.RentDataGridView.ColumnHeadersHeight = 36;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RentDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RentDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.RentDataGridView.EnableHeadersVisualStyles = false;
             this.RentDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
             this.RentDataGridView.Location = new System.Drawing.Point(477, 159);
@@ -474,7 +477,7 @@ namespace CarRentalApp
             this.FineTb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FineTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FineTb.HoverState.Parent = this.FineTb;
-            this.FineTb.Location = new System.Drawing.Point(196, 580);
+            this.FineTb.Location = new System.Drawing.Point(196, 622);
             this.FineTb.Name = "FineTb";
             this.FineTb.PasswordChar = '\0';
             this.FineTb.PlaceholderText = "Fees";
@@ -489,7 +492,7 @@ namespace CarRentalApp
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(36, 580);
+            this.label7.Location = new System.Drawing.Point(36, 622);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label7.Size = new System.Drawing.Size(71, 39);
@@ -498,30 +501,30 @@ namespace CarRentalApp
             // 
             // ReturnDataGridView
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.ReturnDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.ReturnDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ReturnDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ReturnDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.ReturnDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ReturnDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ReturnDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ReturnDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ReturnDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ReturnDataGridView.ColumnHeadersHeight = 36;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ReturnDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReturnDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.ReturnDataGridView.EnableHeadersVisualStyles = false;
             this.ReturnDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
             this.ReturnDataGridView.Location = new System.Drawing.Point(477, 462);
@@ -560,7 +563,7 @@ namespace CarRentalApp
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label10.Location = new System.Drawing.Point(625, 401);
+            this.label10.Location = new System.Drawing.Point(549, 401);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label10.Size = new System.Drawing.Size(223, 39);
@@ -571,7 +574,7 @@ namespace CarRentalApp
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 970);
+            this.panel2.Location = new System.Drawing.Point(0, 1022);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1246, 39);
             this.panel2.TabIndex = 99;
@@ -592,7 +595,7 @@ namespace CarRentalApp
             this.rtnIdDelTxtbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rtnIdDelTxtbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rtnIdDelTxtbox.HoverState.Parent = this.rtnIdDelTxtbox;
-            this.rtnIdDelTxtbox.Location = new System.Drawing.Point(890, 401);
+            this.rtnIdDelTxtbox.Location = new System.Drawing.Point(820, 401);
             this.rtnIdDelTxtbox.Name = "rtnIdDelTxtbox";
             this.rtnIdDelTxtbox.PasswordChar = '\0';
             this.rtnIdDelTxtbox.PlaceholderText = "Enter an Id";
@@ -606,7 +609,7 @@ namespace CarRentalApp
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1031, 389);
+            this.button2.Location = new System.Drawing.Point(976, 389);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 51);
             this.button2.TabIndex = 101;
@@ -614,11 +617,45 @@ namespace CarRentalApp
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // Label20
+            // 
+            this.Label20.AutoSize = true;
+            this.Label20.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label20.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.Label20.Location = new System.Drawing.Point(12, 413);
+            this.Label20.Name = "Label20";
+            this.Label20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Label20.Size = new System.Drawing.Size(148, 39);
+            this.Label20.TabIndex = 102;
+            this.Label20.Text = "Rent Date";
+            // 
+            // RentDate
+            // 
+            this.RentDate.AutoRoundedCorners = true;
+            this.RentDate.BorderRadius = 17;
+            this.RentDate.CheckedState.Parent = this.RentDate;
+            this.RentDate.Enabled = false;
+            this.RentDate.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.RentDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RentDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.RentDate.HoverState.Parent = this.RentDate;
+            this.RentDate.Location = new System.Drawing.Point(233, 413);
+            this.RentDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.RentDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.RentDate.Name = "RentDate";
+            this.RentDate.ShadowDecoration.Parent = this.RentDate;
+            this.RentDate.Size = new System.Drawing.Size(171, 36);
+            this.RentDate.TabIndex = 103;
+            this.RentDate.Value = new System.DateTime(2021, 6, 20, 12, 8, 18, 731);
+            // 
             // Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 1009);
+            this.ClientSize = new System.Drawing.Size(1246, 1061);
+            this.Controls.Add(this.RentDate);
+            this.Controls.Add(this.Label20);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.rtnIdDelTxtbox);
             this.Controls.Add(this.panel2);
@@ -689,5 +726,7 @@ namespace CarRentalApp
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2TextBox rtnIdDelTxtbox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label Label20;
+        private Guna.UI2.WinForms.Guna2DateTimePicker RentDate;
     }
 }

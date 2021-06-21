@@ -72,11 +72,11 @@ namespace CarRentalApp
             load();
             // UpdateonRentDelete();
 
-           /* IdTb.Clear();
-            CustNameTb.Clear();
-            FeesTb.Clear();
-            RentDate.ResetText();
-            ReturnDate.ResetText(); */
+            /* IdTb.Clear();
+             CustNameTb.Clear();
+             FeesTb.Clear();
+             RentDate.ResetText();
+             ReturnDate.ResetText(); */
 
         }
         private void UpdateonRentDelete()
@@ -101,12 +101,13 @@ namespace CarRentalApp
             IdTb.Text = RentDataGridView.SelectedRows[0].Cells[0].Value.ToString();
             CarIdTb.Text = RentDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             CustNameTb.Text = RentDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            Label20.Text = RentDataGridView.SelectedRows[0].Cells[3].Value.ToString();
             ReturnDate.Text = RentDataGridView.SelectedRows[0].Cells[4].Value.ToString();
             DateTime d1 = ReturnDate.Value.Date;
             DateTime d2 = DateTime.Now;
             TimeSpan t = d2 - d1;
             int delay = Convert.ToInt32(t.TotalDays);
-            if(delay <= 0)
+            if (delay <= 0)
             {
                 DelayTb.Text = "No Delay";
                 FineTb.Text = "0";
@@ -114,8 +115,8 @@ namespace CarRentalApp
             else
             {
                 delay = delay - 1;
-                DelayTb.Text = "" + delay + " days";
-                FineTb.Text = "$"+ (delay*250);
+                DelayTb.Text = "" + delay;
+                FineTb.Text = "" + (delay * 250);
 
 
             }
@@ -129,7 +130,7 @@ namespace CarRentalApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (IdTb.Text == " " || CustNameTb.Text == "" || FineTb.Text == ""||DelayTb.Text=="")
+            if (IdTb.Text == " " || CustNameTb.Text == "" || FineTb.Text == "" || DelayTb.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -140,9 +141,9 @@ namespace CarRentalApp
                 try
                 {
                     Con.Open();
-                    
-                   
-                     string query = "insert into ReturnTbl values(" + IdTb.Text + ",'" + CarIdTb.Text + "','" + CustNameTb.Text + "','" + ReturnDate.Text + "','" + DelayTb.Text + "','" + FineTb.Text + "')"; 
+
+
+                    string query = "insert into ReturnTbl values(" + IdTb.Text + ",'" + CarIdTb.Text + "','" + CustNameTb.Text + "','" + ReturnDate.Text + "','" + DelayTb.Text + "','" + FineTb.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Car Duly Returned");
@@ -153,7 +154,7 @@ namespace CarRentalApp
 
 
 
-                        IdTb.Clear();
+                    IdTb.Clear();
                     CustNameTb.Clear();
                     CustNameTb.Clear();
                     FineTb.Clear();
@@ -171,7 +172,7 @@ namespace CarRentalApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -221,41 +222,42 @@ namespace CarRentalApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (IdTb.Text == " " || CustCb.Text == "" || CustNameTb.Text == "" || RentDate.Text == "" || ReturnDate.Text == "")
+            
+
+        }
+
+        private void ReturnDate_ValueChanged(object sender, EventArgs e)
+        {
+            RentDate.Text  = RentDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            ReturnDate.Text = RentDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+            DateTime d1 = ReturnDate.Value.Date;
+            DateTime d2 = RentDate.Value.Date;
+            TimeSpan t = d2 - d1;
+            int delay = Convert.ToInt32(t.TotalDays);
+            string dly,fine;
+            if (delay <= 0)
             {
-                MessageBox.Show("Missing Information");
+                dly = "No Delay";
+                fine = "0";
             }
             else
             {
-                try
-                {
-                    Con.Open();
+                dly = (delay - 1).ToString();
+                dly = "" + dly;
+                fine = "" + (delay * 250);
 
 
-
-                    string query = "update Returntbl set custName='" + CustNameTb.Text + "',RentDate='" + RentDate.Text + "',ReturnDate='" + ReturnDate.Text + "',Fees='" + FeesTb.Text + "';";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer Successfully Updated");
-                    Con.Close();
-                    load();
-
-                    IdTb.Clear();
-                    CustNameTb.ResetText();
-                    FeesTb.Clear();
-                    RentDate.ResetText();
-                    ReturnDate.ResetText();
-                    carNameSelected.Visible = false;
-
-
-                }
-
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message);
-
-                }
             }
+
+            Con.Open(); 
+            string query = "select * from RentalTbl where RentId='" +IdTb.Text+ "'";
+            SqlCommand cmd = new SqlCommand(query, Con);
+           // DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+          
+            //da.Fill(dt); 
+            Con.Close();
+
         }
     }
 }
