@@ -2,5 +2,5 @@
 A Car Rent Management project 
 
 Technologies Used
-# C#
-# MSSQL
+** C#
+** MSSQL
